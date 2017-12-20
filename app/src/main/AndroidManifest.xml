@@ -18,5 +18,6 @@
         <activity android:name=".NuevaActividad" />
         <activity android:name=".NuevaActividadDatos" />
         <activity android:name=".NuevaActividadResultados" />
+        <activity android:name=".ActividadCicloVida" />
     </application>
 </manifest>
