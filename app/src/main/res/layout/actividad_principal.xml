@@ -34,4 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enviar Datos a Nueva Actividad" />
+
+    <Button
+        android:id="@+id/botonResultadosActividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Actividad Esperando Resultados" />
 </LinearLayout>

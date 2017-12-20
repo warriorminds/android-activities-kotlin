@@ -1,9 +1,11 @@
 package com.warriorminds.fundamentsactividades
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import com.warriorminds.fundamentsactividades.modelos.Persona
 import kotlinx.android.synthetic.main.actividad_principal.*
 import java.util.*
@@ -15,6 +17,8 @@ class ActividadPrincipal : AppCompatActivity(){
         val ENTERO = "entero"
         val TEXTO = "texto"
         val PERSONA = "persona"
+        val BOTON_PRESIONADO = "botonPresionado"
+        val CODIGO_SOLICITUD = 1234
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +39,16 @@ class ActividadPrincipal : AppCompatActivity(){
 
         botonEnviarDatosActividad.setOnClickListener {
             enviarDatosActividad()
+        }
+
+        botonResultadosActividad.setOnClickListener {
+            abrirActividadEsperandoResultados()
+        }
+    }
+
+    override fun onActivityResult(codigoSolicitud: Int, codigoResultado: Int, datos: Intent?) {
+        if (codigoSolicitud == CODIGO_SOLICITUD && codigoResultado == Activity.RESULT_OK) {
+            Toast.makeText(this, "Se presionó el ${datos?.getStringExtra(BOTON_PRESIONADO)} botón.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -59,5 +73,10 @@ class ActividadPrincipal : AppCompatActivity(){
         val persona = Persona("Rodrigo", 30, "Calle #5", "Masculino")
         intent.putExtra(PERSONA, persona)
         startActivity(intent)
+    }
+
+    private fun abrirActividadEsperandoResultados() {
+        val intent = Intent(this, NuevaActividadResultados::class.java)
+        startActivityForResult(intent, CODIGO_SOLICITUD)
     }
 }
