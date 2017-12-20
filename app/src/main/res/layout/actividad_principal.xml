@@ -16,4 +16,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cambiar Texto" />
+
+    <Button
+        android:id="@+id/botonNuevaActividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir Actividad" />
+
+    <Button
+        android:id="@+id/botonActividadImplicita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir Actividad Implícita" />
 </LinearLayout>

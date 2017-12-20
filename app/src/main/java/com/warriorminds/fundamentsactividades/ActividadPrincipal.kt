@@ -1,5 +1,7 @@
 package com.warriorminds.fundamentsactividades
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.actividad_principal.*
@@ -13,6 +15,26 @@ class ActividadPrincipal : AppCompatActivity(){
 
         botonCambiarTexto.setOnClickListener {
             tvPrincipal.setText("Número ${Random().nextInt(100)}")
+        }
+
+        botonNuevaActividad.setOnClickListener {
+            abrirNuevaActividad()
+        }
+
+        botonActividadImplicita.setOnClickListener {
+            abrirActividadImplicita()
+        }
+    }
+
+    private fun abrirNuevaActividad() {
+        val intent = Intent(this, NuevaActividad::class.java)
+        startActivity(intent)
+    }
+
+    private fun abrirActividadImplicita() {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://warriorminds.github.io"))
+        intent.resolveActivity(packageManager).let {
+            startActivity(intent)
         }
     }
 }
