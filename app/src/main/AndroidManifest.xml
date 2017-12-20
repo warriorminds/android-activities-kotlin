@@ -16,5 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".NuevaActividad" />
+        <activity android:name=".NuevaActividadDatos" />
     </application>
 </manifest>
