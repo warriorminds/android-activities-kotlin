@@ -44,6 +44,10 @@ class ActividadPrincipal : AppCompatActivity(){
         botonResultadosActividad.setOnClickListener {
             abrirActividadEsperandoResultados()
         }
+
+        botonCicloVida.setOnClickListener {
+            abrirActividadCicloVida()
+        }
     }
 
     override fun onActivityResult(codigoSolicitud: Int, codigoResultado: Int, datos: Intent?) {
@@ -78,5 +82,10 @@ class ActividadPrincipal : AppCompatActivity(){
     private fun abrirActividadEsperandoResultados() {
         val intent = Intent(this, NuevaActividadResultados::class.java)
         startActivityForResult(intent, CODIGO_SOLICITUD)
+    }
+
+    private fun abrirActividadCicloVida() {
+        val intent = Intent(this, ActividadCicloVida::class.java)
+        startActivity(intent)
     }
 }
