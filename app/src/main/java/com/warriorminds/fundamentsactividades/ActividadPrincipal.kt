@@ -48,6 +48,10 @@ class ActividadPrincipal : AppCompatActivity(){
         botonCicloVida.setOnClickListener {
             abrirActividadCicloVida()
         }
+
+        botonPersistenciaDatos.setOnClickListener {
+            abrirActividadPersistenciaDatos()
+        }
     }
 
     override fun onActivityResult(codigoSolicitud: Int, codigoResultado: Int, datos: Intent?) {
@@ -86,6 +90,11 @@ class ActividadPrincipal : AppCompatActivity(){
 
     private fun abrirActividadCicloVida() {
         val intent = Intent(this, ActividadCicloVida::class.java)
+        startActivity(intent)
+    }
+
+    private fun abrirActividadPersistenciaDatos() {
+        val intent = Intent(this, ActividadPersistenciaDatos::class.java)
         startActivity(intent)
     }
 }

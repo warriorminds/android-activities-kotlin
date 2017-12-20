@@ -46,4 +46,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ciclo de Vida" />
+
+    <Button
+        android:id="@+id/botonPersistenciaDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Persistencia de Datos" />
 </LinearLayout>
